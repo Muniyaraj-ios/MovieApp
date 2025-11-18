@@ -65,18 +65,22 @@ struct MoviesListView: View {
                         } else {
                             ForEach(viewModel.search_movies, id: \.id) { movie in
                                 NavigationLink {
-                                    MovieDetailView(viewModel: MovieDetailViewModel(movie_id: movie.id))
+                                    MovieDetailView(viewModel: MovieDetailViewModel(movie_id: movie.id), onFavoriteTap: {
+                                        viewModel.loadFavorites()
+                                    })
                                 } label: {
-                                    MovieRowView(movie: movie)
+                                    MovieRowView(movie: movie, favorites: viewModel.favorites)
                                 }
                             }
                         }
                     } else {
                         ForEach(viewModel.movies, id: \.id) { movie in
                             NavigationLink {
-                                MovieDetailView(viewModel: MovieDetailViewModel(movie_id: movie.id))
+                                MovieDetailView(viewModel: MovieDetailViewModel(movie_id: movie.id), onFavoriteTap: {
+                                    viewModel.loadFavorites()
+                                })
                             } label: {
-                                MovieRowView(movie: movie)
+                                MovieRowView(movie: movie, favorites: viewModel.favorites)
                             }
                             .task {
                                 if movie.id == viewModel.movies.last?.id {

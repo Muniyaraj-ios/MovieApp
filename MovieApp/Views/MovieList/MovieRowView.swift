@@ -11,6 +11,12 @@ import SDWebImageSwiftUI
 
 struct MovieRowView: View {
     let movie: MovieListData
+    var favorites: Set<Int> = []
+    
+    init(movie: MovieListData, favorites: Set<Int>) {
+        self.movie = movie
+        self.favorites = favorites
+    }
     
     var body: some View {
         HStack(alignment: .top, spacing: 14) {
@@ -19,49 +25,57 @@ struct MovieRowView: View {
                 .frame(width: 80, height: 110)
                 .cornerRadius(10)
             
-            VStack(alignment: .leading, spacing: 6) {
-                
-                Text(movie.title)
-                    .foregroundColor(.white)
-                    .font(.system(size: 16, weight: .semibold))
-                    .lineLimit(1)
-                
-                HStack(spacing: 4) {
-                    Image(systemName: "star.fill")
-                        .foregroundColor(Color.yellow)
-                        .font(.system(size: 13))
-                    Text(String(format: "%.1f", movie.vote_average))
-                        .foregroundColor(.yellow)
-                        .font(.system(size: 13))
+            HStack{
+                VStack(alignment: .leading, spacing: 6) {
+                    
+                    Text(movie.title)
+                        .foregroundColor(.white)
+                        .font(.system(size: 16, weight: .semibold))
+                        .lineLimit(1)
+                    
+                    HStack(spacing: 4) {
+                        Image(systemName: "star.fill")
+                            .foregroundColor(Color.yellow)
+                            .font(.system(size: 13))
+                        Text(String(format: "%.1f", movie.vote_average))
+                            .foregroundColor(.yellow)
+                            .font(.system(size: 13))
+                    }
+                    
+                    HStack(spacing: 4) {
+                        Image(systemName: "film")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 12))
+                        Text("Action")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 13))
+                    }
+                    
+                    HStack(spacing: 4) {
+                        Image(systemName: "calendar")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 12))
+                        Text(movie.release_date.prefix(4))
+                            .foregroundColor(.gray)
+                            .font(.system(size: 13))
+                    }
+                    
+                    HStack(spacing: 4) {
+                        Image(systemName: "clock")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 12))
+                        Text("139 minutes")
+                            .foregroundColor(.gray)
+                            .font(.system(size: 13))
+                    }
+                    
                 }
                 
-                HStack(spacing: 4) {
-                    Image(systemName: "film")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 12))
-                    Text("Action")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 13))
-                }
+                Spacer(minLength: 30)
                 
-                HStack(spacing: 4) {
-                    Image(systemName: "calendar")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 12))
-                    Text(movie.release_date.prefix(4))
-                        .foregroundColor(.gray)
-                        .font(.system(size: 13))
-                }
-                
-                HStack(spacing: 4) {
-                    Image(systemName: "clock")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 12))
-                    Text("139 minutes")
-                        .foregroundColor(.gray)
-                        .font(.system(size: 13))
-                }
-                
+                Image(systemName: favorites.contains(movie.id) ? "heart.fill" : "heart")
+                    .foregroundColor(favorites.contains(movie.id) ? .red : .white)
+                    .font(.system(size: 18))
             }
             
             Spacer()

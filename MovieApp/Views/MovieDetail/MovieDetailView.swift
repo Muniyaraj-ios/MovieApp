@@ -13,6 +13,7 @@ struct MovieDetailView: View {
     @StateObject var viewModel: MovieDetailViewModel
     @State private var selectedTab: DetailTab = .about
     @State private var showTrailer = false
+    let onFavoriteTap: () -> Void
 
     
     var body: some View {
@@ -39,6 +40,7 @@ struct MovieDetailView: View {
                     Button{
                         withAnimation {
                             viewModel.toggleFavorite()
+                            onFavoriteTap()
                         }
                     } label: {
                         Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")

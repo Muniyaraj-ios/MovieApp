@@ -22,10 +22,16 @@ class MovieListViewModel: ObservableObject {
     private var currentPage = 1
     private var totalPages = 1
     
+    @Published var favorites: Set<Int> = []
+    
+    @Published var isFavorite: Bool = false
+    private let FAVORITES_KEY = "favorite_movies"
+    
     private var cancellables = Set<AnyCancellable>()
     
     init() {
         observeSearchText()
+        loadFavorites()
     }
     
     @MainActor
@@ -75,5 +81,14 @@ class MovieListViewModel: ObservableObject {
                 searchTask = Task { await self.searchMovies() }
             }
             .store(in: &cancellables)
+    }
+}
+
+extension MovieListViewModel{
+    
+    public func loadFavorites() {
+        if let saved = UserDefaults.standard.array(forKey: FAVORITES_KEY) as? [Int] {
+            favorites = Set(saved)
+        }
     }
 }
