@@ -6,13 +6,18 @@ A clean, modern movie browsing application built using <b>SwiftUI</b>, <b>Combin
 Features: popular movies, search with debounce, pagination, detail screens, trailers, cast & crew, and favorites.
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/1.MovieApp.png" />
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/2.MovieApp.png" />
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/3.MovieApp.png" />
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/4.MovieApp.png" />
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/5.MovieApp.png" />
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/6.MovieApp.png" />
+
+<p align="center" style="display: flex; justify-content: center; gap: 20px;">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/1.MovieApp.png" alt="Preview 1" width="250">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/2.MovieApp.png" alt="Preview 2" width="250">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/3.MovieApp.png" alt="Preview 3" width="250">
+</p>
+
+
+<p align="center" style="display: flex; justify-content: center; gap: 20px;">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/4.MovieApp.png" alt="Preview 4" width="250">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/5.MovieApp.png" alt="Preview 5" width="250">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/6.MovieApp.png" alt="Preview 6" width="250">
 </p>
 
 <hr>
