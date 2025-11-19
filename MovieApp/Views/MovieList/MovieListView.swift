@@ -48,7 +48,7 @@ struct MoviesListView: View {
             .background(Color.gray.opacity(0.15))
             .cornerRadius(10)
             .padding(.horizontal)
-            .padding(.vertical)
+            .padding(.vertical, 8)
             
             ScrollView {
                 LazyVStack(alignment: .leading, spacing: 12) {
@@ -94,6 +94,7 @@ struct MoviesListView: View {
                 .padding(.top, 10)
             }
         }
+        .navigationBarTitle(Text("Popular Movies"), displayMode: .inline)
         .background(Color(red: 18/255, green: 19/255, blue: 23/255).ignoresSafeArea())
         .task {
             await viewModel.loadMovies()

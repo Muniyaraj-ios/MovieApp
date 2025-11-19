@@ -12,6 +12,7 @@ class MovieDetailViewModel: ObservableObject{
     @Published var movie_detail: MovieDetailModel? = nil
     @Published var trailerKey: String?
     @Published var castList: [CastData] = []
+    @Published var crewList: [CrewData] = []
     
     private let service = NetworkService()
     private var isLoading = false
@@ -72,7 +73,14 @@ class MovieDetailViewModel: ObservableObject{
            do {
                let param = NetworkParams(endPoint: .credits(movie: movie_id), method: .get)
                let response: MovieCastModel = try await service.performNetworkService(networkParam: param)
-               castList = response.cast
+               for cast in response.cast where !castList.contains(where: { $0.id == cast.id }){
+                   castList.append(cast)
+               }
+               for crew in response.crew where !crewList.contains(where: { $0.id == crew.id }){
+                   crewList.append(crew)
+               }
+//               castList = response.cast
+//               crewList = response.crew
            } catch {
                print("CAST ERROR:", error)
            }

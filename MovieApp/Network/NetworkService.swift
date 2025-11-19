@@ -14,7 +14,6 @@ actor NetworkService: AdvancedService{
         guard let request = try networkParam.generateURLRequest() else {
             throw URLError(.badURL)
         }
-        forLog(networkParam, json: JSONLocal())
         
         let (data, response) = try await URLSession.shared.data(for: request)
         
