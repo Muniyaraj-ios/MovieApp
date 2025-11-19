@@ -6,20 +6,6 @@ A clean, modern movie browsing application built using <b>SwiftUI</b>, <b>Combin
 Features: popular movies, search with debounce, pagination, detail screens, trailers, cast & crew, and favorites.
 </p>
 
-
-<p align="center" style="display: flex; justify-content: center; gap: 20px;">
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/1.MovieApp.png" alt="Preview 1" width="250">
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/2.MovieApp.png" alt="Preview 2" width="250">
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/3.MovieApp.png" alt="Preview 3" width="250">
-</p>
-
-
-<p align="center" style="display: flex; justify-content: center; gap: 20px;">
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/4.MovieApp.png" alt="Preview 4" width="250">
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/5.MovieApp.png" alt="Preview 5" width="250">
-  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/6.MovieApp.png" alt="Preview 6" width="250">
-</p>
-
 <hr>
 
 <h2>🚀 Features</h2>
@@ -163,11 +149,21 @@ let apiKey = "&lt;YOUR_TMDB_API_KEY&gt;"
 
 <h2>📸 Screenshots</h2>
 
-<p align="center">
-  <!-- Replace with your actual screenshot links -->
-  <img src="Screenshots/home.png" width="300">
-  <img src="Screenshots/detail.png" width="300">
+<p align="center" style="display: flex; justify-content: center; gap: 20px;">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/1.MovieApp.png" alt="Preview 1" width="250">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/2.MovieApp.png" alt="Preview 2" width="250">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/3.MovieApp.png" alt="Preview 3" width="250">
 </p>
+
+<br>
+
+<p align="center" style="display: flex; justify-content: center; gap: 20px;">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/4.MovieApp.png" alt="Preview 4" width="250">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/5.MovieApp.png" alt="Preview 5" width="250">
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/6.MovieApp.png" alt="Preview 6" width="250">
+</p>
+
+<br>
 
 <hr>
 
