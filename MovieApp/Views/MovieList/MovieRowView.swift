@@ -13,9 +13,12 @@ struct MovieRowView: View {
     let movie: MovieListData
     var favorites: Set<Int> = []
     
-    init(movie: MovieListData, favorites: Set<Int>) {
+    @ObservedObject private var viewModel: MovieListViewModel
+    
+    init(movie: MovieListData, favorites: Set<Int>, viewModel: MovieListViewModel) {
         self.movie = movie
         self.favorites = favorites
+        self.viewModel = viewModel
     }
     
     var body: some View {
@@ -73,9 +76,16 @@ struct MovieRowView: View {
                 
                 Spacer(minLength: 30)
                 
-                Image(systemName: favorites.contains(movie.id) ? "heart.fill" : "heart")
-                    .foregroundColor(favorites.contains(movie.id) ? .red : .white)
-                    .font(.system(size: 18))
+                Button {
+                    withAnimation {
+                        viewModel.toggleFavorite(movie_id: movie.id)
+                    }
+                } label: {
+                    Image(systemName: favorites.contains(movie.id) ? "heart.fill" : "heart")
+                        .foregroundColor(favorites.contains(movie.id) ? .red : .white)
+                        .font(.system(size: 18))
+                        .frame(width: 35, height: 35)
+                }
             }
             
             Spacer()

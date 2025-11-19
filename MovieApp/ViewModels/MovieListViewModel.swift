@@ -86,6 +86,19 @@ class MovieListViewModel: ObservableObject {
 
 extension MovieListViewModel{
     
+    func toggleFavorite(movie_id: Int) {
+        if favorites.contains(movie_id) {
+            favorites.remove(movie_id)
+        } else {
+            favorites.insert(movie_id)
+        }
+        saveFavorites()
+    }
+    
+    private func saveFavorites() {
+        UserDefaults.standard.set(Array(favorites), forKey: FAVORITES_KEY)
+    }
+    
     public func loadFavorites() {
         if let saved = UserDefaults.standard.array(forKey: FAVORITES_KEY) as? [Int] {
             favorites = Set(saved)

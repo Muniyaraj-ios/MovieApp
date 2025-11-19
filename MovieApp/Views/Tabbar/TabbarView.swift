@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct TabbarView: View {
-    @State var selectedTab = Tab.movies
+    @State var selectedTab = Tab.popular
     
     enum Tab: Int {
-        case movies, discover, fanClub, myLists
+        case popular, favourites
     }
     
     func tabbarItem(text: String, image: String) -> some View {
@@ -26,10 +26,10 @@ struct TabbarView: View {
         TabView(selection: $selectedTab) {
             MoviesListView().tabItem{
                 self.tabbarItem(text: "Movies", image: "film")
-            }.tag(Tab.movies)
+            }.tag(Tab.popular)
             EmptyView().tabItem{
                 self.tabbarItem(text: "Favourites", image: "heart.circle")
-            }.tag(Tab.myLists)
+            }.tag(Tab.favourites)
         }
     }
 }

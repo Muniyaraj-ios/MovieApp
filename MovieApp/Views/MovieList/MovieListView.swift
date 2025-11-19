@@ -69,7 +69,7 @@ struct MoviesListView: View {
                                         viewModel.loadFavorites()
                                     })
                                 } label: {
-                                    MovieRowView(movie: movie, favorites: viewModel.favorites)
+                                    MovieRowView(movie: movie, favorites: viewModel.favorites, viewModel: viewModel)
                                 }
                             }
                         }
@@ -80,7 +80,7 @@ struct MoviesListView: View {
                                     viewModel.loadFavorites()
                                 })
                             } label: {
-                                MovieRowView(movie: movie, favorites: viewModel.favorites)
+                                MovieRowView(movie: movie, favorites: viewModel.favorites, viewModel: viewModel)
                             }
                             .task {
                                 if movie.id == viewModel.movies.last?.id {
