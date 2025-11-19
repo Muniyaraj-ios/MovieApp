@@ -34,7 +34,8 @@ struct MovieRowView: View {
                     Text(movie.title)
                         .foregroundColor(.white)
                         .font(.system(size: 16, weight: .semibold))
-                        .lineLimit(1)
+                        .lineLimit(nil)
+                        .multilineTextAlignment(.leading)
                     
                     HStack(spacing: 4) {
                         Image(systemName: "star.fill")

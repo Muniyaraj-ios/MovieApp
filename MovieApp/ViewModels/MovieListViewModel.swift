@@ -73,7 +73,7 @@ class MovieListViewModel: ObservableObject {
     private func observeSearchText() {
         $searchText
             .removeDuplicates()
-            //.debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
+            .debounce(for: .milliseconds(300), scheduler: DispatchQueue.main)
             .sink { [weak self] newValue in
                 guard let self else { return }
                 
