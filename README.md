@@ -7,11 +7,12 @@ Features: popular movies, search with debounce, pagination, detail screens, trai
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Swift-5.9-orange?logo=swift" />
-  <img src="https://img.shields.io/badge/Xcode-15+-blue?logo=xcode" />
-  <img src="https://img.shields.io/badge/iOS-16+-lightgrey?logo=apple" />
-  <img src="https://img.shields.io/badge/Architecture-MVVM-green" />
-  <img src="https://img.shields.io/badge/API-TMDb-blue?logo=themoviedatabase" />
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/1.MovieApp.png" />
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/2.MovieApp.png" />
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/3.MovieApp.png" />
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/4.MovieApp.png" />
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/5.MovieApp.png" />
+  <img src="https://raw.githubusercontent.com/Muniyaraj-ios/assets/main/6.MovieApp.png" />
 </p>
 
 <hr>
